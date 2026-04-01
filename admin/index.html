@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Setup Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1e293b;
+      --navy-deep: #020617;
+      --gold: #f59e0b;
+      --teal: #10b981;
+      --teal-dark: #0d7060;
+      --white: #ffffff;
+      --cream: #f8fafc;
+      --grey: #e6e7ef;
+      --border-light: #c7c9db;
+      --text-dark: #404343;
+      --text-light: #8a8a9a;
+      --font-heading: 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --shadow-card: 0 2px 8px rgba(30, 41, 59, 0.1);
+      --radius-sm: 8px;
+      --radius-lg: 32px;
+      --radius-pill: 100px;
+      --space-2xs: 4px;
+      --space-xs: 8px;
+      --space-sm: 12px;
+      --space-md: 16px;
+      --space-lg: 20px;
+      --space-xl: 24px;
+      --space-2xl: 32px;
+      --space-4xl: 64px;
+      --input-border: #e0e1ea;
+      --disabled-bg: #d0d0d8;
+      --error-bg: #ffebee;
+      --error-border: #ef5350;
+      --error-text: #c62828;
+      --error-hover-bg: #ffcdd2;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+      padding: var(--space-xl) var(--space-xl) var(--space-lg);
+    }
+    .back-link {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: var(--space-xs);
+    }
+    .back-link:hover { text-decoration: underline; }
+    .page-header h1 {
+      color: var(--white);
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: var(--space-2xs);
+    }
+    .page-header p {
+      color: var(--border-light);
+      font-size: 13px;
+    }
+
+    .content {
+      max-width: 960px;
+      margin: var(--space-2xl) auto var(--space-4xl);
+      padding: 0 var(--space-xl);
+    }
+
+    .panels-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-2xl);
+    }
+    @media (max-width: 768px) {
+      .panels-grid { grid-template-columns: 1fr; }
+    }
+
+    .panel-card {
+      background: var(--white);
+      border: 1px solid var(--grey);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-lg) var(--space-lg) var(--space-md);
+      border-bottom: 1px solid var(--grey);
+    }
+    .panel-title {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      flex: 1;
+    }
+    .count-badge {
+      background: var(--cream);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-pill);
+      padding: 2px var(--space-sm);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      min-width: 28px;
+      text-align: center;
+    }
+
+    .email-list { min-height: 80px; }
+    .email-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-sm) var(--space-lg);
+      border-bottom: 1px solid var(--grey);
+      gap: var(--space-md);
+    }
+    .email-row:last-child { border-bottom: none; }
+    .email-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      word-break: break-all;
+      flex: 1;
+    }
+    .btn-remove {
+      background: var(--error-bg);
+      color: var(--error-text);
+      border: 1px solid var(--error-border);
+      border-radius: var(--radius-pill);
+      padding: 4px var(--space-sm);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .btn-remove:hover { background: var(--error-hover-bg); }
+
+    .list-state {
+      padding: var(--space-2xl) var(--space-lg);
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    .list-state-error { color: var(--error-text); }
+
+    .add-form {
+      padding: var(--space-md) var(--space-lg) var(--space-lg);
+      border-top: 1px solid var(--grey);
+      background: var(--cream);
+    }
+    .add-form-row {
+      display: flex;
+      gap: var(--space-xs);
+      align-items: flex-start;
+    }
+    .email-input {
+      flex: 1;
+      padding: var(--space-xs) var(--space-sm);
+      border: 2px solid var(--input-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-input:focus { border-color: var(--navy); }
+    .email-input::placeholder { color: var(--text-light); }
+    .btn-grant {
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: var(--space-xs) var(--space-md);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-grant:hover:not(:disabled) { background: var(--teal-dark); transform: translateY(-1px); }
+    .btn-grant:disabled { background: var(--disabled-bg); cursor: not-allowed; transform: none; }
+    .input-error {
+      font-size: 12px;
+      color: var(--error-text);
+      margin-top: var(--space-2xs);
+      display: none;
+    }
+    .input-error.visible { display: block; }
+
+    .audit-section { margin-top: var(--space-2xl); }
+    .audit-section h2 {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: var(--space-md);
+    }
+    .table-wrapper {
+      border: 1px solid var(--grey);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-card);
+      overflow-x: auto;
+      overflow-y: auto;
+      max-height: 480px;
+    }
+    .audit-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .audit-table th {
+      background: var(--cream);
+      color: var(--navy);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: var(--space-sm) var(--space-md);
+      text-align: left;
+      border-bottom: 2px solid var(--grey);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .audit-table td {
+      padding: var(--space-sm) var(--space-md);
+      color: var(--text-dark);
+      border-bottom: 1px solid var(--grey);
+      white-space: nowrap;
+    }
+    .audit-table tr:last-child td { border-bottom: none; }
+    .audit-table tbody tr:nth-child(even) td { background: var(--cream); }
+    .action-granted { color: var(--teal); font-weight: 700; }
+    .action-revoked { color: var(--error-text); font-weight: 700; text-transform: capitalize; }
+    .log-state {
+      padding: var(--space-2xl) var(--space-xl);
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    .log-state-error { color: var(--error-text); }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <a href="/claude-setup/" class="back-link">&larr; Claude Setup</a>
+    <h1>Claude Setup Admin</h1>
+    <p>Manage Cowork and Code access for team members</p>
+  </div>
+
+  <div class="content">
+
+    <div class="panels-grid">
+
+      <div class="panel-card">
+        <div class="panel-header">
+          <div class="panel-title">Cowork</div>
+          <div class="count-badge" id="cowork-count">-</div>
+        </div>
+        <div class="email-list" id="cowork-list">
+          <div class="list-state">Loading...</div>
+        </div>
+        <div class="add-form">
+          <div class="add-form-row">
+            <input
+              type="email"
+              class="email-input"
+              id="cowork-input"
+              placeholder="name@acmecorp.com"
+              autocomplete="off"
+              oninput="onEmailInput('cowork')"
+              onkeydown="onEnterKey(event, 'cowork')"
+            >
+            <button class="btn-grant" id="cowork-btn" disabled onclick="grantAccess('cowork')">Grant Access</button>
+          </div>
+          <div class="input-error" id="cowork-error"></div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-header">
+          <div class="panel-title">Code</div>
+          <div class="count-badge" id="code-count">-</div>
+        </div>
+        <div class="email-list" id="code-list">
+          <div class="list-state">Loading...</div>
+        </div>
+        <div class="add-form">
+          <div class="add-form-row">
+            <input
+              type="email"
+              class="email-input"
+              id="code-input"
+              placeholder="name@acmecorp.com"
+              autocomplete="off"
+              oninput="onEmailInput('code')"
+              onkeydown="onEnterKey(event, 'code')"
+            >
+            <button class="btn-grant" id="code-btn" disabled onclick="grantAccess('code')">Grant Access</button>
+          </div>
+          <div class="input-error" id="code-error"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="audit-section">
+      <h2>Audit Log</h2>
+      <div class="table-wrapper" id="log-wrapper">
+        <div class="log-state">Loading...</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function clearChildren(el) {
+      while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function setListState(tool, msg, isError) {
+      var el = document.getElementById(tool + '-list');
+      clearChildren(el);
+      var div = document.createElement('div');
+      div.className = 'list-state' + (isError ? ' list-state-error' : '');
+      div.textContent = msg;
+      el.appendChild(div);
+    }
+
+    function setLogState(msg, isError) {
+      var wrapper = document.getElementById('log-wrapper');
+      clearChildren(wrapper);
+      var div = document.createElement('div');
+      div.className = 'log-state' + (isError ? ' log-state-error' : '');
+      div.textContent = msg;
+      wrapper.appendChild(div);
+    }
+
+    function loadAll() {
+      loadAccess();
+      loadLog();
+    }
+
+    function loadAccess() {
+      setListState('cowork', 'Loading...', false);
+      setListState('code', 'Loading...', false);
+      fetch('/api/claude-admin/access')
+        .then(function(r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function(data) {
+          renderList('cowork', data.cowork || []);
+          renderList('code', data.code || []);
+        })
+        .catch(function() {
+          setListState('cowork', 'Failed to load.', true);
+          setListState('code', 'Failed to load.', true);
+        });
+    }
+
+    function loadLog() {
+      setLogState('Loading...', false);
+      fetch('/api/claude-admin/log')
+        .then(function(r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function(data) {
+          renderLog(data.log || []);
+        })
+        .catch(function() {
+          setLogState('Failed to load audit log.', true);
+        });
+    }
+
+    function renderList(tool, emails) {
+      var listEl = document.getElementById(tool + '-list');
+      var badge = document.getElementById(tool + '-count');
+      badge.textContent = emails.length;
+      clearChildren(listEl);
+
+      if (emails.length === 0) {
+        var empty = document.createElement('div');
+        empty.className = 'list-state';
+        empty.textContent = 'No one has access yet.';
+        listEl.appendChild(empty);
+        return;
+      }
+
+      emails.forEach(function(email) {
+        var row = document.createElement('div');
+        row.className = 'email-row';
+
+        var text = document.createElement('span');
+        text.className = 'email-text';
+        text.textContent = email;
+
+        var btn = document.createElement('button');
+        btn.className = 'btn-remove';
+        btn.textContent = 'Remove';
+        btn.addEventListener('click', (function(e) {
+          return function() { revokeAccess(tool, e); };
+        })(email));
+
+        row.appendChild(text);
+        row.appendChild(btn);
+        listEl.appendChild(row);
+      });
+    }
+
+    function renderLog(entries) {
+      var wrapper = document.getElementById('log-wrapper');
+      clearChildren(wrapper);
+
+      if (!entries || entries.length === 0) {
+        var empty = document.createElement('div');
+        empty.className = 'log-state';
+        empty.textContent = 'No activity recorded yet.';
+        wrapper.appendChild(empty);
+        return;
+      }
+
+      var table = document.createElement('table');
+      table.className = 'audit-table';
+
+      var thead = document.createElement('thead');
+      var hRow = document.createElement('tr');
+      ['Time', 'Admin', 'Action', 'Tool', 'Email'].forEach(function(col) {
+        var th = document.createElement('th');
+        th.textContent = col;
+        hRow.appendChild(th);
+      });
+      thead.appendChild(hRow);
+      table.appendChild(thead);
+
+      var tbody = document.createElement('tbody');
+      entries.forEach(function(entry) {
+        var tr = document.createElement('tr');
+
+        var tdTime = document.createElement('td');
+        tdTime.textContent = formatDateTime(entry.timestamp);
+
+        var tdAdmin = document.createElement('td');
+        tdAdmin.textContent = entry.admin || '-';
+
+        var tdAction = document.createElement('td');
+        var actionSpan = document.createElement('span');
+        actionSpan.textContent = entry.action === 'grant' ? 'Granted' : 'Revoked';
+        actionSpan.className = entry.action === 'grant' ? 'action-granted' : 'action-revoked';
+        tdAction.appendChild(actionSpan);
+
+        var tdTool = document.createElement('td');
+        tdTool.textContent = entry.tool || '-';
+
+        var tdEmail = document.createElement('td');
+        tdEmail.textContent = entry.email || '-';
+
+        tr.appendChild(tdTime);
+        tr.appendChild(tdAdmin);
+        tr.appendChild(tdAction);
+        tr.appendChild(tdTool);
+        tr.appendChild(tdEmail);
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrapper.appendChild(table);
+    }
+
+    function grantAccess(tool) {
+      var input = document.getElementById(tool + '-input');
+      var btn = document.getElementById(tool + '-btn');
+      var email = input.value.trim().toLowerCase();
+
+      if (!isValidEmail(email)) {
+        showError(tool, 'Email must end in @acmecorp.com');
+        return;
+      }
+
+      hideError(tool);
+      btn.disabled = true;
+      btn.textContent = 'Granting...';
+
+      fetch('/api/claude-admin/access', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tool: tool, email: email, action: 'grant' })
+      })
+        .then(function(r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function(data) {
+          if (!data.ok) throw new Error('Server error');
+          input.value = '';
+          btn.disabled = true;
+          btn.textContent = 'Grant Access';
+          loadAll();
+        })
+        .catch(function() {
+          showError(tool, 'Failed to grant access. Try again.');
+          btn.disabled = false;
+          btn.textContent = 'Grant Access';
+        });
+    }
+
+    function revokeAccess(tool, email) {
+      if (!confirm('Remove ' + email + ' from ' + tool.charAt(0).toUpperCase() + tool.slice(1) + ' access?')) return;
+
+      fetch('/api/claude-admin/access', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tool: tool, email: email, action: 'revoke' })
+      })
+        .then(function(r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function(data) {
+          if (!data.ok) throw new Error('Server error');
+          loadAll();
+        })
+        .catch(function() {
+          alert('Failed to revoke access. Try again.');
+        });
+    }
+
+    function isValidEmail(email) {
+      return email.length > 0 && email.endsWith('@acmecorp.com') && email.indexOf('@') > 0;
+    }
+
+    function onEmailInput(tool) {
+      var input = document.getElementById(tool + '-input');
+      var btn = document.getElementById(tool + '-btn');
+      var email = input.value.trim().toLowerCase();
+      btn.disabled = !isValidEmail(email);
+      hideError(tool);
+    }
+
+    function onEnterKey(event, tool) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        var btn = document.getElementById(tool + '-btn');
+        if (!btn.disabled) grantAccess(tool);
+      }
+    }
+
+    function showError(tool, msg) {
+      var el = document.getElementById(tool + '-error');
+      el.textContent = msg;
+      el.classList.add('visible');
+    }
+
+    function hideError(tool) {
+      var el = document.getElementById(tool + '-error');
+      el.classList.remove('visible');
+    }
+
+    function formatDateTime(iso) {
+      if (!iso) return '-';
+      var d = new Date(iso);
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) +
+        ' ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+    }
+
+    loadAll();
+  </script>
+</body>
+</html>
