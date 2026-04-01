@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "company": "Acme Corp",
+  "domain": "acmecorp.com",
+  "platform_url": "https://team.acmecorp.com",
+  "departments": [
+    { "id": "eng", "name": "Engineering" },
+    { "id": "marketing", "name": "Marketing" },
+    { "id": "sales", "name": "Sales" },
+    { "id": "support", "name": "Support" },
+    { "id": "leadership", "name": "Leadership" }
+  ],
+  "admin_emails": [
+    "alex@acmecorp.com",
+    "jordan@acmecorp.com"
+  ]
+}
