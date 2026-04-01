@@ -29,7 +29,7 @@ def head():
       --teal: #10b981; --blue-light: #e8f4fc; --white: #ffffff; --cream: #f8fafc;
       --light-bg: #e6e7ef; --border-light: #c7c9db; --text-gray: #5a5a5a; --text-light: #8a8a9a;
       --font-heading: 'Inter', sans-serif; --font-body: 'Inter', sans-serif;
-      --shadow-card: 0 2px 8px rgba(68, 73, 99, 0.1); --shadow-lg: 0 4px 16px rgba(68, 73, 99, 0.15);
+      --shadow-card: 0 2px 8px rgba(30, 41, 59, 0.1); --shadow-lg: 0 4px 16px rgba(30, 41, 59, 0.15);
       --radius-sm: 8px; --radius-md: 12px; --radius-lg: 32px; --radius-pill: 100px;
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
       --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 20px;

@@ -29,8 +29,8 @@
     --font-body: 'Inter', sans-serif;
 
     /* Shadows */
-    --shadow-card: 0 2px 8px rgba(68, 73, 99, 0.1);
-    --shadow-lg: 0 4px 16px rgba(68, 73, 99, 0.15);
+    --shadow-card: 0 2px 8px rgba(30, 41, 59, 0.1);
+    --shadow-lg: 0 4px 16px rgba(30, 41, 59, 0.15);
 
     /* Radii */
     --radius-sm: 8px;
