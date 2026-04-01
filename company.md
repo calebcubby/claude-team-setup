@@ -40,6 +40,6 @@ Acme Corp is a SaaS company building project management tools for distributed te
 > Define your compliance requirements here. Examples:
 > - GDPR, SOC 2, or industry-specific regulations
 > - What data is safe to discuss vs. what requires anonymization
-> - Which tools have BAA coverage
+> - Which tools have data processing agreement coverage
 
 **For this template:** No customer PII (names, emails, account data) should be shared with AI tools unless the tool is covered by your data processing agreement.

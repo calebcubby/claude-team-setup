@@ -1052,7 +1052,7 @@ def styles():
       margin: 0 0 var(--space-xs);
       color: var(--navy);
     }
-    .giddyup-pill {
+    .team-setup-pill {
       background: var(--gold);
       color: var(--text-dark);
       padding: var(--space-sm) var(--space-lg);
