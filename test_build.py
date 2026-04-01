@@ -574,7 +574,7 @@ class TestSpacingUtilityClasses:
     def test_download_row_class(self):
         assert ".download-row" in build.styles()
 
-    def test_phi_warning_inline_class(self):
+    def test_data_warning_inline_class(self):
         assert ".data-warning-inline" in build.styles()
 
     def test_q_hint_below_class(self):
