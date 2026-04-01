@@ -1,0 +1,78 @@
+/* Brand Tokens */
+:root {
+    /* Official Palette (8 colors) */
+    --navy: #1e293b;
+    --blue: #3b82f6;
+    --light-blue: #bfdbfe;
+    --grey: #e6e7ef;
+    --pink: #f472b6;
+    --gold: #f59e0b;
+    --text-dark: #404343;
+    --off-white: #fafafa;
+
+    /* Extended Tokens */
+    --navy-dark: #0f172a;
+    --navy-deep: #020617;
+    --gold-dark: #d97706;
+    --gold-light: #fef3c7;
+    --teal: #10b981;
+    --blue-light: #e8f4fc;
+    --white: #ffffff;
+    --cream: #f8fafc;
+    --light-bg: #e6e7ef;
+    --border-light: #c7c9db;
+    --text-gray: #5a5a5a;
+    --text-light: #8a8a9a;
+
+    /* Typography */
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Shadows */
+    --shadow-card: 0 2px 8px rgba(68, 73, 99, 0.1);
+    --shadow-lg: 0 4px 16px rgba(68, 73, 99, 0.15);
+
+    /* Radii */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 32px;
+    --radius-pill: 100px;
+
+    /* Spacing Scale (4px base) */
+    --space-2xs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 20px;
+    --space-xl: 24px;
+    --space-2xl: 32px;
+    --space-3xl: 48px;
+    --space-4xl: 64px;
+
+    /* Semantic Colors */
+    --error-bg: #ffebee;
+    --error-border: #ef5350;
+    --error-text: #c62828;
+    --error-text-dark: #b71c1c;
+    --error-accent: #c0392b;
+    --success-bg: #e0f2ef;
+    --success-text: #0a6b5e;
+    --success-bg-alt: #e8f5e9;
+    --warning-text: #b8860b;
+    --info-bg: #e8eaf6;
+    --info-text: #283593;
+    --input-border: #e0e1ea;
+    --disabled-bg: #d0d0d8;
+    --hover-bg: #f0efec;
+    --memory-bg: #f0f7ff;
+    --memory-border: #d0e3f7;
+    --teal-bg: #e0f2f1;
+    --teal-text: #00695c;
+    --teal-dark: #0d7060;
+    --highlight-bg: #fef9ee;
+    --error-hover-bg: #ffcdd2;
+
+    /* Easing */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
