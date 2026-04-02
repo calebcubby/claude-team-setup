@@ -56,12 +56,14 @@
     .section-title {
       font-size: 28px;
       margin-bottom: var(--space-xs);
+      text-align: center;
     }
     .section-subtitle {
       color: var(--text-gray);
       font-size: 16px;
       margin-bottom: var(--space-xl);
       line-height: 1.6;
+      text-align: center;
     }
 
     /* ── Section Nav ────────────────────────────────────── */
@@ -148,8 +150,7 @@
       margin-top: var(--space-3xl);
       padding: 0 var(--space-xs);
     }
-    .narrative-intro h3 {
-      font-size: 20px;
+    .narrative-intro h2 {
       color: var(--navy);
       margin-bottom: var(--space-xs);
     }
@@ -165,8 +166,7 @@
       border-radius: var(--radius-sm);
       padding: var(--space-2xl);
     }
-    .why-claude-card h3 {
-      font-size: 20px;
+    .why-claude-card h2 {
       color: var(--navy);
       margin-bottom: var(--space-xs);
     }
@@ -195,7 +195,6 @@
       z-index: 1;
     }
     .compliance-title {
-      font-size: 20px;
       text-align: center;
       margin-bottom: var(--space-2xs);
     }
@@ -1707,8 +1706,7 @@
       margin-top: var(--space-3xl);
       padding: 0 var(--space-xs);
     }
-    .mission-narrative h3 {
-      font-size: 22px;
+    .mission-narrative h2 {
       color: var(--navy);
       margin-bottom: var(--space-md);
     }
@@ -1774,8 +1772,7 @@
       margin-top: var(--space-2xl);
       margin-bottom: var(--space-2xl);
     }
-    .chat-intro h3 {
-      font-size: 22px;
+    .chat-intro h2 {
       color: var(--navy);
       margin-bottom: var(--space-sm);
     }
@@ -1866,9 +1863,9 @@
     .video-embed .video-play-btn svg { width: 100%; height: 100%; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius-md); }
     /* Onboarding toggle */
-    .onboarding-toggle-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); margin-bottom: var(--space-md); }
+    .onboarding-toggle-header { position: relative; margin-bottom: var(--space-md); }
     .onboarding-toggle-header .section-title { margin-bottom: 0; }
-    .onboarding-toggle-btn { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--teal); background: none; border: 2px solid var(--teal); border-radius: var(--radius-pill); padding: var(--space-xs) var(--space-lg); cursor: pointer; white-space: nowrap; transition: background 0.2s, color 0.2s; }
+    .onboarding-toggle-btn { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--teal); background: none; border: 2px solid var(--teal); border-radius: var(--radius-pill); padding: var(--space-xs) var(--space-lg); cursor: pointer; white-space: nowrap; transition: background 0.2s, color 0.2s; }
     .onboarding-toggle-btn:hover { background: var(--teal); color: var(--white); }
     .onboarding-section { transition: max-height 0.3s var(--ease-out-expo), opacity 0.3s; overflow: hidden; }
     .onboarding-section.collapsed { max-height: 0 !important; opacity: 0; margin: 0; padding: 0; }
@@ -1900,16 +1897,16 @@
     </div>
   <div class="page-content"><div class="tab-content active" data-tab="overview">
       <div class="mission-narrative">
-        <h3>Your work matters. Claude makes it go further.</h3>
+        <h2 class="section-title">Your work matters. Claude makes it go further.</h2>
         <p>Every role at Acme Corp exists for one reason - building tools that help teams ship faster. Claude gives you leverage to do that better. Write a client proposal in minutes. Research a competitor without digging through dozens of tabs. Draft a board update that's tight on the first pass.</p>
         <p>Claude has three escalating layers. <strong>Chat</strong> handles thinking - drafting, research, analysis. <strong>Cowork</strong> handles doing - persistent projects, file operations, connected tools. <strong>Code</strong> handles building - actual software, pipelines, integrations.</p>
         <div style="background:var(--cream);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);margin-top:var(--space-md);">
           <p style="margin:0;">Every role at Acme Corp has access to Chat. It covers 80% of what you'll need. Cowork and Code add capability but come with additional risk. Leadership has access to all three tiers, and certain roles will too. If you think Cowork or Code would be valuable for your work, talk to your manager to request access.</p>
         </div>
       </div>
-<h3 style="text-align:center;font-size:18px;color:var(--navy);margin-bottom:var(--space-xs);">Meet your thinking partner</h3><div class="video-embed" data-video-id="VHsp6Hp7Stw" data-video-src="https://www.youtube-nocookie.com/embed/VHsp6Hp7Stw?autoplay=1"><img src="https://img.youtube.com/vi/VHsp6Hp7Stw/maxresdefault.jpg" alt="Video thumbnail" loading="lazy"><div class="video-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div></div>
+<h2 class="section-title">Meet your thinking partner</h2><div class="video-embed" data-video-id="VHsp6Hp7Stw" data-video-src="https://www.youtube-nocookie.com/embed/VHsp6Hp7Stw?autoplay=1"><img src="https://img.youtube.com/vi/VHsp6Hp7Stw/maxresdefault.jpg" alt="Video thumbnail" loading="lazy"><div class="video-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div></div>
       <div class="why-claude-card">
-        <h3>Why we chose Claude</h3>
+        <h2 class="section-title">Why we chose Claude</h2>
         <p class="why-sub">Anthropic builds AI with safety as the foundation - not an afterthought. That matters when your product handles customer data.</p>
         <ul>
           <li><strong>Enterprise-grade security</strong> - Claude is built for organizations handling sensitive data. Your conversations are private and protected.</li>
@@ -1920,7 +1917,7 @@
       </div>
 
     <div class="section compliance">
-      <h3 class="compliance-title">Data Privacy - Read This First</h3>
+      <h2 class="section-title compliance-title">Data Privacy - Read This First</h2>
       <p class="compliance-subtitle">Know what's safe to share</p>
       <div class="compliance-grid">
         <div class="compliance-box compliance-allowed">
@@ -1936,7 +1933,7 @@
     </div>
 
       <div class="section">
-        <h3 class="section-title" style="font-size:22px;">Three Escalating Layers</h3>
+        <h2 class="section-title">Three Escalating Layers</h2>
         <p class="section-subtitle">Thinking, doing, building. Each layer adds capability.</p>
         <div class="tool-cards-grid">
           <div class="tool-card" data-tab-target="chat">
@@ -1988,6 +1985,73 @@
               <li>Everyday tasks</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Resources</h2>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <h4>Training</h4>
+          <ul>
+            <li><a href="https://www.anthropic.com/learn" target="_blank">Anthropic Learning Center</a></li>
+            <li><a href="https://docs.anthropic.com/en/docs" target="_blank">Claude Documentation</a></li>
+            <li><a href="https://support.claude.com" target="_blank">Help Center</a></li>
+            <li><a href="https://anthropic.skilljar.com/introduction-to-claude-cowork" target="_blank">Intro to Claude Cowork</a> (course)</li>
+            <li><a href="https://anthropic.skilljar.com/claude-code-in-action" target="_blank">Claude Code in Action</a> (course)</li>
+            <li><a href="https://x.com/trq212/status/2033949937936085378" target="_blank">How Anthropic Uses Skills</a> (X)</li>
+          </ul>
+        </div>
+        <div class="resource-card">
+          <h4>Internal</h4>
+          <ul>
+            <li><strong>#ai</strong> Slack channel - questions, tips, wins</li>
+            <li><a href="#" target="_blank">AI Governance Policy</a> (link to your internal doc)</li>
+            <li>Training recordings in Google Drive (People Ops)</li>
+          </ul>
+        </div>
+        <div class="resource-card">
+          <h4>Get Help</h4>
+          <ul>
+            <li>Ask in your AI channel for team-specific questions</li>
+            <li>Use Claude itself - ask "how do I use Projects?"</li>
+            <li>Engineering team for Code track setup issues</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+      <div class="closing-quote">
+        <p>We build tools that help teams ship. Claude helps us move faster, think sharper, and deliver what matters.</p>
+      </div>
+</div><!-- tab-overview --><div class="tab-content" data-tab="chat">
+      <div class="chat-intro">
+        <h2 class="section-title">What is Chat?</h2>
+        <p>Chat handles thinking and drafting. Single-session, text-in/text-out. This is where most of your team lives today.</p>
+        <p>You talk to it like a colleague. Ask it to draft an email, brainstorm campaign ideas, analyze data you paste in, or research a topic across the web. It learns your voice and context, so the more you use it, the sharper it gets.</p>
+        <p>Set it up in three steps below.</p>
+      </div>
+<div class="video-embed" data-video-id="0vZ_UVLhSQQ" data-video-src="https://www.youtube-nocookie.com/embed/0vZ_UVLhSQQ?autoplay=1&start=1"><img src="https://img.youtube.com/vi/0vZ_UVLhSQQ/maxresdefault.jpg" alt="Video thumbnail" loading="lazy"><div class="video-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div></div>
+    <div class="section">
+      <h2 class="section-title">Key Chat Features</h2>
+      <p class="section-subtitle">These tools make Claude more than a chatbot.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Projects</h4>
+          <p>Persistent workspaces with custom instructions and knowledge files. Create one per major initiative. Everything you upload stays available across conversations.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Deep Research</h4>
+          <p>Claude searches the web, reads dozens of sources, and synthesizes a report. Use for competitor analysis, regulatory research, or any question that needs real data.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Artifacts</h4>
+          <p>Interactive outputs - documents, spreadsheets, diagrams, code. Use when you need something you can edit, download, or share. Skip for quick answers.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Connectors</h4>
+          <p>Connect Claude to Google Calendar, ClickUp, Excel, PowerPoint, and other tools. Pulls in context without manual uploads. <em>Review your data processing agreement before connecting tools with sensitive data. Don't connect anything with sensitive data without approval.</em></p>
         </div>
       </div>
     </div>
@@ -2160,60 +2224,7 @@
           </div>
         </div>
     </div>
-
-      <div class="section surprise-section">
-        <h2 class="section-title">Try something new</h2>
-        <p class="section-subtitle">Paste one of these into Claude Chat and see what comes back.</p>
-        <div class="surprise-card">
-          <div class="surprise-prompt" data-prompt-idx="0"><p class="surprise-text">Draft a response to a customer asking why our enterprise plan costs more than competitors.</p><button class="copy-btn" data-copy="Draft a response to a customer asking why our enterprise plan costs more than competitors.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="1" style="display:none;"><p class="surprise-text">What questions should I ask a channel partner about their onboarding timeline and support expectations?</p><button class="copy-btn" data-copy="What questions should I ask a channel partner about their onboarding timeline and support expectations?">Copy</button></div><div class="surprise-prompt" data-prompt-idx="2" style="display:none;"><p class="surprise-text">Write a one-paragraph explanation of what Acme Corp does for a prospect who's never heard of us.</p><button class="copy-btn" data-copy="Write a one-paragraph explanation of what Acme Corp does for a prospect who's never heard of us.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="3" style="display:none;"><p class="surprise-text">Help me outline a presentation on why investing in project management tools improves team velocity.</p><button class="copy-btn" data-copy="Help me outline a presentation on why investing in project management tools improves team velocity.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="4" style="display:none;"><p class="surprise-text">What are the most common objections prospects have during a demo, and how should we address them?</p><button class="copy-btn" data-copy="What are the most common objections prospects have during a demo, and how should we address them?">Copy</button></div><div class="surprise-prompt" data-prompt-idx="5" style="display:none;"><p class="surprise-text">Draft talking points for a call with an enterprise partner about integration timelines and SLA expectations.</p><button class="copy-btn" data-copy="Draft talking points for a call with an enterprise partner about integration timelines and SLA expectations.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="6" style="display:none;"><p class="surprise-text">Explain the difference between our Standard and Pro tiers to someone evaluating both options.</p><button class="copy-btn" data-copy="Explain the difference between our Standard and Pro tiers to someone evaluating both options.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="7" style="display:none;"><p class="surprise-text">Write a short FAQ for customers about what's included in each pricing tier.</p><button class="copy-btn" data-copy="Write a short FAQ for customers about what's included in each pricing tier.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="8" style="display:none;"><p class="surprise-text">What does a strong business case for adopting new software include? Give me a checklist I can share with buyers.</p><button class="copy-btn" data-copy="What does a strong business case for adopting new software include? Give me a checklist I can share with buyers.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="9" style="display:none;"><p class="surprise-text">Help me write a Slack message to the team announcing a new product feature. Keep it short and energizing.</p><button class="copy-btn" data-copy="Help me write a Slack message to the team announcing a new product feature. Keep it short and energizing.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="10" style="display:none;"><p class="surprise-text">Draft a follow-up email to a prospect who attended a demo but hasn't moved forward yet.</p><button class="copy-btn" data-copy="Draft a follow-up email to a prospect who attended a demo but hasn't moved forward yet.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="11" style="display:none;"><p class="surprise-text">What are the key metrics a SaaS company our size should track weekly? Help me build a scorecard.</p><button class="copy-btn" data-copy="What are the key metrics a SaaS company our size should track weekly? Help me build a scorecard.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="12" style="display:none;"><p class="surprise-text">I need to explain our onboarding process to a new hire. Write it as a simple step-by-step guide.</p><button class="copy-btn" data-copy="I need to explain our onboarding process to a new hire. Write it as a simple step-by-step guide.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="13" style="display:none;"><p class="surprise-text">Compare the pros and cons of selling direct vs. through channel partners for a B2B SaaS product.</p><button class="copy-btn" data-copy="Compare the pros and cons of selling direct vs. through channel partners for a B2B SaaS product.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="14" style="display:none;"><p class="surprise-text">Write a 60-second elevator pitch for Acme Corp that I could use at a tech conference.</p><button class="copy-btn" data-copy="Write a 60-second elevator pitch for Acme Corp that I could use at a tech conference.">Copy</button></div>
-          <button class="btn btn-secondary surprise-shuffle-btn" onclick="shufflePrompt()">Shuffle &#x21BB;</button>
-        </div>
-      </div>
-
-    <div class="section">
-      <h2 class="section-title">Resources</h2>
-      <div class="resources-grid">
-        <div class="resource-card">
-          <h4>Training</h4>
-          <ul>
-            <li><a href="https://www.anthropic.com/learn" target="_blank">Anthropic Learning Center</a></li>
-            <li><a href="https://docs.anthropic.com/en/docs" target="_blank">Claude Documentation</a></li>
-            <li><a href="https://support.claude.com" target="_blank">Help Center</a></li>
-            <li><a href="https://anthropic.skilljar.com/introduction-to-claude-cowork" target="_blank">Intro to Claude Cowork</a> (course)</li>
-            <li><a href="https://anthropic.skilljar.com/claude-code-in-action" target="_blank">Claude Code in Action</a> (course)</li>
-            <li><a href="https://x.com/trq212/status/2033949937936085378" target="_blank">How Anthropic Uses Skills</a> (X)</li>
-          </ul>
-        </div>
-        <div class="resource-card">
-          <h4>Internal</h4>
-          <ul>
-            <li><strong>#ai</strong> Slack channel - questions, tips, wins</li>
-            <li><a href="#" target="_blank">AI Governance Policy</a> (link to your internal doc)</li>
-            <li>Training recordings in Google Drive (People Ops)</li>
-          </ul>
-        </div>
-        <div class="resource-card">
-          <h4>Get Help</h4>
-          <ul>
-            <li>Ask in your AI channel for team-specific questions</li>
-            <li>Use Claude itself - ask "how do I use Projects?"</li>
-            <li>Engineering team for Code track setup issues</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-      <div class="closing-quote">
-        <p>We build tools that help teams ship. Claude helps us move faster, think sharper, and deliver what matters.</p>
-      </div>
-</div><!-- tab-overview --><div class="tab-content" data-tab="chat">
-      <div class="chat-intro">
-        <h3>What is Chat?</h3>
-        <p>Chat handles thinking and drafting. Single-session, text-in/text-out. This is where most of your team lives today.</p>
-        <p>You talk to it like a colleague. Ask it to draft an email, brainstorm campaign ideas, analyze data you paste in, or research a topic across the web. It learns your voice and context, so the more you use it, the sharper it gets.</p>
-        <p>Set it up in three steps below.</p>
-      </div>
-<div class="video-embed" data-video-id="0vZ_UVLhSQQ" data-video-src="https://www.youtube-nocookie.com/embed/0vZ_UVLhSQQ?autoplay=1&start=1"><img src="https://img.youtube.com/vi/0vZ_UVLhSQQ/maxresdefault.jpg" alt="Video thumbnail" loading="lazy"><div class="video-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div></div><div class="wizard-section" id="chat-wizard">
+<div class="wizard-section" id="chat-wizard">
       <div class="progress-stepper" id="progress-stepper">
         <div class="progress-step active" data-progress="1">
           <div class="progress-circle">1</div>
@@ -2427,35 +2438,21 @@ If no date is known, use [unknown] instead.
       </div>
     </div><!-- stage-3 -->
 <div class="wizard-success" id="wizard-success" style="display:none;"><strong>Chat setup complete.</strong><span>You gave Claude context most people skip. That makes all the difference.</span></div></div><!-- .wizard-section -->
-    <div class="section">
-      <h2 class="section-title">Key Chat Features</h2>
-      <p class="section-subtitle">These tools make Claude more than a chatbot.</p>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h4>Projects</h4>
-          <p>Persistent workspaces with custom instructions and knowledge files. Create one per major initiative. Everything you upload stays available across conversations.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Deep Research</h4>
-          <p>Claude searches the web, reads dozens of sources, and synthesizes a report. Use for competitor analysis, regulatory research, or any question that needs real data.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Artifacts</h4>
-          <p>Interactive outputs - documents, spreadsheets, diagrams, code. Use when you need something you can edit, download, or share. Skip for quick answers.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Connectors</h4>
-          <p>Connect Claude to Google Calendar, ClickUp, Excel, PowerPoint, and other tools. Pulls in context without manual uploads. <em>Review your data processing agreement before connecting tools with sensitive data. Don't connect anything with sensitive data without approval.</em></p>
+      <div class="section surprise-section">
+        <h2 class="section-title">Try something new</h2>
+        <p class="section-subtitle">Paste one of these into Claude Chat and see what comes back.</p>
+        <div class="surprise-card">
+          <div class="surprise-prompt" data-prompt-idx="0"><p class="surprise-text">Draft a response to a customer asking why our enterprise plan costs more than competitors.</p><button class="copy-btn" data-copy="Draft a response to a customer asking why our enterprise plan costs more than competitors.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="1" style="display:none;"><p class="surprise-text">What questions should I ask a channel partner about their onboarding timeline and support expectations?</p><button class="copy-btn" data-copy="What questions should I ask a channel partner about their onboarding timeline and support expectations?">Copy</button></div><div class="surprise-prompt" data-prompt-idx="2" style="display:none;"><p class="surprise-text">Write a one-paragraph explanation of what Acme Corp does for a prospect who's never heard of us.</p><button class="copy-btn" data-copy="Write a one-paragraph explanation of what Acme Corp does for a prospect who's never heard of us.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="3" style="display:none;"><p class="surprise-text">Help me outline a presentation on why investing in project management tools improves team velocity.</p><button class="copy-btn" data-copy="Help me outline a presentation on why investing in project management tools improves team velocity.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="4" style="display:none;"><p class="surprise-text">What are the most common objections prospects have during a demo, and how should we address them?</p><button class="copy-btn" data-copy="What are the most common objections prospects have during a demo, and how should we address them?">Copy</button></div><div class="surprise-prompt" data-prompt-idx="5" style="display:none;"><p class="surprise-text">Draft talking points for a call with an enterprise partner about integration timelines and SLA expectations.</p><button class="copy-btn" data-copy="Draft talking points for a call with an enterprise partner about integration timelines and SLA expectations.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="6" style="display:none;"><p class="surprise-text">Explain the difference between our Standard and Pro tiers to someone evaluating both options.</p><button class="copy-btn" data-copy="Explain the difference between our Standard and Pro tiers to someone evaluating both options.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="7" style="display:none;"><p class="surprise-text">Write a short FAQ for customers about what's included in each pricing tier.</p><button class="copy-btn" data-copy="Write a short FAQ for customers about what's included in each pricing tier.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="8" style="display:none;"><p class="surprise-text">What does a strong business case for adopting new software include? Give me a checklist I can share with buyers.</p><button class="copy-btn" data-copy="What does a strong business case for adopting new software include? Give me a checklist I can share with buyers.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="9" style="display:none;"><p class="surprise-text">Help me write a Slack message to the team announcing a new product feature. Keep it short and energizing.</p><button class="copy-btn" data-copy="Help me write a Slack message to the team announcing a new product feature. Keep it short and energizing.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="10" style="display:none;"><p class="surprise-text">Draft a follow-up email to a prospect who attended a demo but hasn't moved forward yet.</p><button class="copy-btn" data-copy="Draft a follow-up email to a prospect who attended a demo but hasn't moved forward yet.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="11" style="display:none;"><p class="surprise-text">What are the key metrics a SaaS company our size should track weekly? Help me build a scorecard.</p><button class="copy-btn" data-copy="What are the key metrics a SaaS company our size should track weekly? Help me build a scorecard.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="12" style="display:none;"><p class="surprise-text">I need to explain our onboarding process to a new hire. Write it as a simple step-by-step guide.</p><button class="copy-btn" data-copy="I need to explain our onboarding process to a new hire. Write it as a simple step-by-step guide.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="13" style="display:none;"><p class="surprise-text">Compare the pros and cons of selling direct vs. through channel partners for a B2B SaaS product.</p><button class="copy-btn" data-copy="Compare the pros and cons of selling direct vs. through channel partners for a B2B SaaS product.">Copy</button></div><div class="surprise-prompt" data-prompt-idx="14" style="display:none;"><p class="surprise-text">Write a 60-second elevator pitch for Acme Corp that I could use at a tech conference.</p><button class="copy-btn" data-copy="Write a 60-second elevator pitch for Acme Corp that I could use at a tech conference.">Copy</button></div>
+          <button class="btn btn-secondary surprise-shuffle-btn" onclick="shufflePrompt()">Shuffle &#x21BB;</button>
         </div>
       </div>
-    </div>
 </div><!-- tab-chat --><div class="tab-content" data-tab="cowork">
     <div class="tab-intro">
       <h2 class="section-title">What is Cowork?</h2>
       <p>Cowork is the desktop app's project mode. You give Claude access to a folder on your computer and it works independently - reading and editing files, connecting to Google Calendar and Drive, browsing the web, and producing real deliverables like spreadsheets, reports, and dashboards.</p>
       <p><strong>Best for:</strong> Operations, marketing, finance, and anyone who works with documents, data, or repetitive knowledge work. No technical background needed.</p>
     </div>
-<div class="video-embed" data-video-id="UAmKyyZ-b9E" data-video-src="https://www.youtube-nocookie.com/embed/UAmKyyZ-b9E?autoplay=1"><img src="https://img.youtube.com/vi/UAmKyyZ-b9E/maxresdefault.jpg" alt="Video thumbnail" loading="lazy"><div class="video-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div></div>
+<h2 class="section-title">Cowork: Claude Works on Your Files</h2><div class="video-embed" data-video-id="UAmKyyZ-b9E" data-video-src="https://www.youtube-nocookie.com/embed/UAmKyyZ-b9E?autoplay=1"><img src="https://img.youtube.com/vi/UAmKyyZ-b9E/maxresdefault.jpg" alt="Video thumbnail" loading="lazy"><div class="video-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div></div>
     <div class="locked-state" id="cowork-locked">
       <div class="locked-examples">
         <h3>What You Can Do With It</h3>
@@ -2482,7 +2479,86 @@ If no date is known, use [unknown] instead.
         <p>Chat with your manager about getting access. If you've already completed the Chat track, mention that - it helps.</p>
       </div>
     </div><!-- cowork-locked -->
-<div class="unlocked-state" id="cowork-unlocked" style="display:none;"><div class="onboarding-toggle-header"><h2 class="section-title">Cowork: Claude Works on Your Files</h2><button class="onboarding-toggle-btn" data-toggle-target="cowork-onboarding" aria-expanded="true">Hide Setup</button></div><div class="onboarding-section" id="cowork-onboarding"><p class="section-subtitle">The desktop app's Cowork mode lets Claude read, edit, and create files on your computer. Set up a project folder, then try real tasks below.</p><div class="note">Data Privacy: Do not share customer PII, internal financial data, or proprietary information in Cowork prompts or project files without reviewing your data processing agreement.</div><div class="folder-tree" style="background:var(--cream);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);font-family:monospace;font-size:13px;line-height:1.8;margin-bottom:var(--space-lg);color:var(--navy);"><p style="font-family:var(--font-body);font-size:14px;color:var(--text-light);margin-bottom:var(--space-sm);">Here's what your project folder will look like when you're done:</p><div><span style="margin-right:6px;">&#128193;</span> <strong>Claude_Company</strong></div><div style="padding-left:24px;"><span style="margin-right:6px;">&#128196;</span> company.md <span style="color:var(--text-light);font-size:12px;margin-left:8px;">- business context, strategy, team</span></div><div style="padding-left:24px;"><span style="margin-right:6px;">&#128196;</span> brand.md <span style="color:var(--text-light);font-size:12px;margin-left:8px;">- colors, fonts, design tokens</span></div><div style="padding-left:24px;"><span style="margin-right:6px;">&#128196;</span> writing-style.md <span style="color:var(--text-light);font-size:12px;margin-left:8px;">- your personal writing voice</span></div></div><div class="cowork-cards">
+<div class="unlocked-state" id="cowork-unlocked" style="display:none;">
+    <div class="section">
+      <h2 class="section-title">Cowork Features</h2>
+      <p class="section-subtitle">What makes Cowork different from Chat.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Plugins + Slash Commands</h4>
+          <p>21 official plugins add capabilities. Type / to access built-in workflows like /explore-data, /build-dashboard, and /performance-report. Enable or build custom plugins under Customize in settings.</p>
+        </div>
+        <div class="feature-card">
+          <h4>File Access</h4>
+          <p>Cowork reads and writes files on your computer. Drop a folder into a project and Claude can analyze, edit, and create files inside it.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Connectors</h4>
+          <p>Connect to Google Calendar, ClickUp, and other tools without downloading files. Be careful with connected accounts that may have access to sensitive data. Review your data processing agreement for details.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Multi-Step Workflows</h4>
+          <p>Give Claude a complex task and it executes multiple steps autonomously. Research, analyze, generate reports - all in one conversation.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Scheduled Tasks</h4>
+          <p>Set up recurring tasks that run on a schedule - daily briefings, weekly roundups, inbox digests. Claude runs them automatically while your machine is on. <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork" target="_blank" rel="noopener">Learn how to set them up.</a></p>
+        </div>
+      </div>
+    </div>
+<div class="note">Data Privacy: Do not share customer PII, internal financial data, or proprietary information in Cowork prompts or project files without reviewing your data processing agreement.</div>
+    <div class="section">
+      <h2 class="section-title">Cowork Tips</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h4>Structure your project folder</h4>
+          <p>Don't dump everything in one folder. Use subfolders that match how you think about the work:</p>
+          <ul>
+            <li><strong>references/</strong> - Read-only context (brand guides, policies, data)</li>
+            <li><strong>outputs/</strong> - Files Claude creates for you</li>
+            <li><strong>done/</strong> - Completed work you want to keep</li>
+          </ul>
+          <p style="margin-top:var(--space-xs);">Claude reads the folder structure and uses it to decide where to save new files.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Add a CLAUDE.md file</h4>
+          <p>Create a file called <strong>CLAUDE.md</strong> in the root of your project folder. Write instructions that apply to every conversation: your role, what this project is, formatting preferences, things to avoid. Claude reads it automatically at the start of every session. Think of it as persistent instructions you don't have to repeat.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Combine plugins</h4>
+          <p>The real power is stacking plugins. Use Google Calendar + Data to analyze meeting patterns. Use Slack + Marketing to audit your channel messaging. Multiple plugins activate automatically in the same conversation.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Delegate with three questions</h4>
+          <p>Before handing off a task, answer these: What does "done" look like? What context can't Claude guess? What constraints apply? The clearer you are upfront, the less back-and-forth you need.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Ask for a changelog</h4>
+          <p>When Claude edits or creates multiple files, ask it to write a <strong>what-changed.md</strong> documenting every decision it made. Review that before accepting the work. Especially important for anything you'll share externally.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Back up critical files</h4>
+          <p>Before letting Claude reorganize, rename, or edit important files, make a copy. Cowork can move fast and undo isn't always straightforward. A quick duplicate of the original folder takes 10 seconds and saves you from a bad day.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Test on dummy files first</h4>
+          <p>If you're asking Claude to process, reorganize, or transform a batch of files, run it on a small test set first. Verify it interprets your instructions correctly before pointing it at the real data.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Keep the desktop app open</h4>
+          <p>Closing Claude Desktop kills any running Cowork task. If you've kicked off a long process (research, file reorganization, scheduled task), leave the app running until it finishes.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Cowork vs Chat</h4>
+          <p>Use Chat for thinking, writing, and conversation. Use Cowork when you need file access, plugins, or multi-step workflows that touch your tools.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Research Preview</h4>
+          <p>Cowork is in Research Preview (beta). Expect rough edges. Save important outputs to files. Don't rely on it for time-sensitive deliverables yet.</p>
+        </div>
+      </div>
+    </div>
+<div class="onboarding-toggle-header"><h2 class="section-title">Get Started</h2><button class="onboarding-toggle-btn" data-toggle-target="cowork-onboarding" aria-expanded="true">Hide</button></div><div class="onboarding-section" id="cowork-onboarding"><p class="section-subtitle">Set up a project folder, then try real tasks below.</p><div class="folder-tree" style="background:var(--cream);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);font-family:monospace;font-size:13px;line-height:1.8;margin-bottom:var(--space-lg);color:var(--navy);"><p style="font-family:var(--font-body);font-size:14px;color:var(--text-light);margin-bottom:var(--space-sm);">Here's what your project folder will look like when you're done:</p><div><span style="margin-right:6px;">&#128193;</span> <strong>Claude_Company</strong></div><div style="padding-left:24px;"><span style="margin-right:6px;">&#128196;</span> company.md <span style="color:var(--text-light);font-size:12px;margin-left:8px;">- business context, strategy, team</span></div><div style="padding-left:24px;"><span style="margin-right:6px;">&#128196;</span> brand.md <span style="color:var(--text-light);font-size:12px;margin-left:8px;">- colors, fonts, design tokens</span></div><div style="padding-left:24px;"><span style="margin-right:6px;">&#128196;</span> writing-style.md <span style="color:var(--text-light);font-size:12px;margin-left:8px;">- your personal writing voice</span></div></div><div class="cowork-cards">
         <div class="wizard-step" data-cowork-card="1">
           <button class="wizard-step-header" aria-expanded="false">
             <span class="step-num">1</span>
@@ -2649,85 +2725,6 @@ Brand colors from brand.md. Save as quarterly-review.pptx.</div>
           </div>
         </div>
 </div><div id="cowork-success" style="display:none; text-align:center; padding:var(--space-xl) 0 var(--space-xs);"><p style="font-size:18px; font-weight:600; color:var(--navy);">You're all set with Cowork!</p><p style="font-size:14px; color:var(--text-light);">Try it on your own projects. Start with small tasks and build from there.</p></div></div><!-- onboarding-section -->
-    <div class="section">
-      <h2 class="section-title">Cowork Features</h2>
-      <p class="section-subtitle">What makes Cowork different from Chat.</p>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h4>Plugins + Slash Commands</h4>
-          <p>21 official plugins add capabilities. Type / to access built-in workflows like /explore-data, /build-dashboard, and /performance-report. Enable or build custom plugins under Customize in settings.</p>
-        </div>
-        <div class="feature-card">
-          <h4>File Access</h4>
-          <p>Cowork reads and writes files on your computer. Drop a folder into a project and Claude can analyze, edit, and create files inside it.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Connectors</h4>
-          <p>Connect to Google Calendar, ClickUp, and other tools without downloading files. Be careful with connected accounts that may have access to sensitive data. Review your data processing agreement for details.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Multi-Step Workflows</h4>
-          <p>Give Claude a complex task and it executes multiple steps autonomously. Research, analyze, generate reports - all in one conversation.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Scheduled Tasks</h4>
-          <p>Set up recurring tasks that run on a schedule - daily briefings, weekly roundups, inbox digests. Claude runs them automatically while your machine is on. <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork" target="_blank" rel="noopener">Learn how to set them up.</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2 class="section-title">Cowork Tips</h2>
-      <div class="tips-grid">
-        <div class="tip-card">
-          <h4>Structure your project folder</h4>
-          <p>Don't dump everything in one folder. Use subfolders that match how you think about the work:</p>
-          <ul>
-            <li><strong>references/</strong> - Read-only context (brand guides, policies, data)</li>
-            <li><strong>outputs/</strong> - Files Claude creates for you</li>
-            <li><strong>done/</strong> - Completed work you want to keep</li>
-          </ul>
-          <p style="margin-top:var(--space-xs);">Claude reads the folder structure and uses it to decide where to save new files.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Add a CLAUDE.md file</h4>
-          <p>Create a file called <strong>CLAUDE.md</strong> in the root of your project folder. Write instructions that apply to every conversation: your role, what this project is, formatting preferences, things to avoid. Claude reads it automatically at the start of every session. Think of it as persistent instructions you don't have to repeat.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Combine plugins</h4>
-          <p>The real power is stacking plugins. Use Google Calendar + Data to analyze meeting patterns. Use Slack + Marketing to audit your channel messaging. Multiple plugins activate automatically in the same conversation.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Delegate with three questions</h4>
-          <p>Before handing off a task, answer these: What does "done" look like? What context can't Claude guess? What constraints apply? The clearer you are upfront, the less back-and-forth you need.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Ask for a changelog</h4>
-          <p>When Claude edits or creates multiple files, ask it to write a <strong>what-changed.md</strong> documenting every decision it made. Review that before accepting the work. Especially important for anything you'll share externally.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Back up critical files</h4>
-          <p>Before letting Claude reorganize, rename, or edit important files, make a copy. Cowork can move fast and undo isn't always straightforward. A quick duplicate of the original folder takes 10 seconds and saves you from a bad day.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Test on dummy files first</h4>
-          <p>If you're asking Claude to process, reorganize, or transform a batch of files, run it on a small test set first. Verify it interprets your instructions correctly before pointing it at the real data.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Keep the desktop app open</h4>
-          <p>Closing Claude Desktop kills any running Cowork task. If you've kicked off a long process (research, file reorganization, scheduled task), leave the app running until it finishes.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Cowork vs Chat</h4>
-          <p>Use Chat for thinking, writing, and conversation. Use Cowork when you need file access, plugins, or multi-step workflows that touch your tools.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Research Preview</h4>
-          <p>Cowork is in Research Preview (beta). Expect rough edges. Save important outputs to files. Don't rely on it for time-sensitive deliverables yet.</p>
-        </div>
-      </div>
-    </div>
-
     <div class="section">
       <h2 class="section-title">Available Plugins</h2>
       <p class="section-subtitle">20 plugins with 126 skills. Click a plugin to see its skills. Hover or tap a skill for details.</p>
@@ -3148,7 +3145,7 @@ Brand colors from brand.md. Save as quarterly-review.pptx.</div>
       <p><strong>Best for:</strong> Engineering and technical team members who write or maintain code. You don't need to be a developer, but you do need to be curious.</p>
       <p style="color:var(--text-light);font-size:14px;">Want 1-on-1 help getting started? Ask in your team's AI channel and someone will walk you through it.</p>
     </div>
-<div class="video-embed" data-video-id="AJpK3YTTKZ4" data-video-src="https://www.youtube-nocookie.com/embed/AJpK3YTTKZ4?autoplay=1"><img src="https://img.youtube.com/vi/AJpK3YTTKZ4/maxresdefault.jpg" alt="Video thumbnail" loading="lazy"><div class="video-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div></div>
+<h2 class="section-title">Code: Claude as Your Pair Programmer</h2><div class="video-embed" data-video-id="AJpK3YTTKZ4" data-video-src="https://www.youtube-nocookie.com/embed/AJpK3YTTKZ4?autoplay=1"><img src="https://img.youtube.com/vi/AJpK3YTTKZ4/maxresdefault.jpg" alt="Video thumbnail" loading="lazy"><div class="video-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg></div></div>
     <div class="locked-state" id="code-locked">
       <div class="locked-examples">
         <h3>What the Team Has Built</h3>
@@ -3171,7 +3168,56 @@ Brand colors from brand.md. Save as quarterly-review.pptx.</div>
         <p>Chat with your manager about getting access. Prior experience with the Chat and Cowork tracks helps your case.</p>
       </div>
     </div><!-- code-locked -->
-<div class="unlocked-state" id="code-unlocked" style="display:none;"><div class="onboarding-toggle-header"><h2 class="section-title">Code: Claude as Your Pair Programmer</h2><button class="onboarding-toggle-btn" data-toggle-target="code-onboarding" aria-expanded="true">Hide Setup</button></div><div class="onboarding-section" id="code-onboarding"><p class="section-subtitle">Claude Code lives inside the Claude desktop app. It reads, writes, and executes code directly on your machine. Start with the setup card below, then work through the exercises.</p><div class="note">Data Privacy: Do not share customer PII, internal financial data, or proprietary information in prompts or project files. Claude Code has full read/write/execute access to your machine - only grant it access to directories you intend to work in.</div><div class="code-cards">
+<div class="unlocked-state" id="code-unlocked" style="display:none;">
+    <div class="section">
+      <h2 class="section-title">Code Features</h2>
+      <p class="section-subtitle">What makes Claude Code a full development partner.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Plan Mode</h4>
+          <p>Start complex tasks with "plan this" and Claude maps out the approach before writing code. Review and approve the plan, then execute step by step.</p>
+        </div>
+        <div class="feature-card">
+          <h4>CLAUDE.md</h4>
+          <p>Your project's instruction manual for Claude. Define conventions, architecture, and rules. Every conversation in the project follows them automatically.</p>
+        </div>
+        <div class="feature-card">
+          <h4>/save Command</h4>
+          <p>Save your conversation state at any point. Pick up exactly where you left off in a new session. Critical for multi-day projects.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Context Management</h4>
+          <p>Clear context, start fresh threads, and manage what Claude remembers. Short, focused sessions produce better code than marathon conversations.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Git Integration</h4>
+          <p>Claude creates branches, writes commits, opens PRs, and manages your git workflow. Tell it what to build and it handles version control.</p>
+        </div>
+      </div>
+    </div>
+<div class="note">Data Privacy: Do not share customer PII, internal financial data, or proprietary information in prompts or project files. Claude Code has full read/write/execute access to your machine - only grant it access to directories you intend to work in.</div>
+    <div class="section">
+      <h2 class="section-title">Code Tips</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h4>Start with Plan Mode</h4>
+          <p>For any task with more than one step, start in Plan Mode. Claude's plans are better than jumping straight to code. Review before executing.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Keep sessions short</h4>
+          <p>Context windows have limits. Start a new Claude Code session for each distinct task. Resume with /save if you need continuity across sessions.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Be specific in prompts</h4>
+          <p>Name the exact file, function, and behavior you want. "Fix the login bug" is worse than "In auth.ts, the JWT expiry check on line 45 should use >= not >".</p>
+        </div>
+        <div class="tip-card">
+          <h4>Review before accepting</h4>
+          <p>Claude writes good code but makes mistakes. Review every change before committing. Use git diff to see exactly what changed.</p>
+        </div>
+      </div>
+    </div>
+<div class="onboarding-toggle-header"><h2 class="section-title">Get Started</h2><button class="onboarding-toggle-btn" data-toggle-target="code-onboarding" aria-expanded="true">Hide</button></div><div class="onboarding-section" id="code-onboarding"><p class="section-subtitle">Start with the setup card below, then work through the exercises.</p><div class="code-cards">
         <div class="wizard-step" data-code-card="1">
           <button class="wizard-step-header" aria-expanded="false">
             <span class="step-num">1</span>
@@ -3345,55 +3391,6 @@ Use /ship when ready.</div>
           </div>
         </div>
 </div><div id="code-success" style="display:none; text-align:center; padding:var(--space-xl) 0 var(--space-xs);"><p style="font-size:18px; font-weight:600; color:var(--navy);">You're set up with Claude Code!</p><p style="font-size:14px; color:var(--text-light);">Pick a real project and start building. Plan Mode + specific prompts = best results.</p></div></div><!-- onboarding-section -->
-    <div class="section">
-      <h2 class="section-title">Code Features</h2>
-      <p class="section-subtitle">What makes Claude Code a full development partner.</p>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h4>Plan Mode</h4>
-          <p>Start complex tasks with "plan this" and Claude maps out the approach before writing code. Review and approve the plan, then execute step by step.</p>
-        </div>
-        <div class="feature-card">
-          <h4>CLAUDE.md</h4>
-          <p>Your project's instruction manual for Claude. Define conventions, architecture, and rules. Every conversation in the project follows them automatically.</p>
-        </div>
-        <div class="feature-card">
-          <h4>/save Command</h4>
-          <p>Save your conversation state at any point. Pick up exactly where you left off in a new session. Critical for multi-day projects.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Context Management</h4>
-          <p>Clear context, start fresh threads, and manage what Claude remembers. Short, focused sessions produce better code than marathon conversations.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Git Integration</h4>
-          <p>Claude creates branches, writes commits, opens PRs, and manages your git workflow. Tell it what to build and it handles version control.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2 class="section-title">Code Tips</h2>
-      <div class="tips-grid">
-        <div class="tip-card">
-          <h4>Start with Plan Mode</h4>
-          <p>For any task with more than one step, start in Plan Mode. Claude's plans are better than jumping straight to code. Review before executing.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Keep sessions short</h4>
-          <p>Context windows have limits. Start a new Claude Code session for each distinct task. Resume with /save if you need continuity across sessions.</p>
-        </div>
-        <div class="tip-card">
-          <h4>Be specific in prompts</h4>
-          <p>Name the exact file, function, and behavior you want. "Fix the login bug" is worse than "In auth.ts, the JWT expiry check on line 45 should use >= not >".</p>
-        </div>
-        <div class="tip-card">
-          <h4>Review before accepting</h4>
-          <p>Claude writes good code but makes mistakes. Review every change before committing. Use git diff to see exactly what changed.</p>
-        </div>
-      </div>
-    </div>
-
     <div class="section">
       <h2 class="section-title">Ways to Use Claude Code</h2>
       <p class="section-subtitle">Three entry points, same capabilities. Start with the desktop app and move to terminal or VS Code as you get comfortable.</p>
@@ -4007,12 +4004,12 @@ Use /ship when ready.</div>
         var hidden = getOnboardingHidden();
         if (hidden[targetId]) {
           section.classList.add('collapsed');
-          btn.textContent = 'Show Setup';
+          btn.textContent = 'Show';
           btn.setAttribute('aria-expanded', 'false');
         }
         btn.addEventListener('click', function() {
           var isCollapsed = section.classList.toggle('collapsed');
-          btn.textContent = isCollapsed ? 'Show Setup' : 'Hide Setup';
+          btn.textContent = isCollapsed ? 'Show' : 'Hide';
           btn.setAttribute('aria-expanded', String(!isCollapsed));
           setOnboardingHidden(targetId, isCollapsed);
         });
@@ -4091,7 +4088,8 @@ Use /ship when ready.</div>
       // ── Access Gating ──────────────────────────────────────
       (function() {
         var isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-        var accessPromise = isLocal
+        var forceLocked = new URLSearchParams(location.search).get('locked') === '1';
+        var accessPromise = (isLocal && !forceLocked)
           ? Promise.resolve({ cowork: true, code: true })
           : fetch('/api/claude-setup-access').then(function(res) { return res.json(); });
         accessPromise.then(function(data) {

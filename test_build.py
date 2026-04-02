@@ -1582,7 +1582,7 @@ class TestMissionNarrative:
         assert 'class="mission-narrative"' in build.mission_narrative()
 
     def test_contains_heading(self):
-        assert '<h3>' in build.mission_narrative()
+        assert '<h2' in build.mission_narrative()
 
     def test_contains_paragraphs(self):
         assert build.mission_narrative().count('<p') >= 3
@@ -1656,11 +1656,13 @@ class TestTabOverview:
     def test_contains_model_picker(self):
         assert 'model-picker' in build.tab_overview()
 
-    def test_contains_general_tips(self):
-        assert 'tips-grid' in build.tab_overview()
+    def test_tips_moved_to_chat(self):
+        assert 'tips-grid' not in build.tab_overview()
+        assert 'tips-grid' in build.tab_chat()
 
-    def test_contains_use_cases(self):
-        assert 'role-select' in build.tab_overview()
+    def test_use_cases_moved_to_chat(self):
+        assert 'role-select' not in build.tab_overview()
+        assert 'role-select' in build.tab_chat()
 
     def test_contains_resources(self):
         assert 'resources-grid' in build.tab_overview()
@@ -1683,8 +1685,8 @@ class TestChatIntro:
     def test_contains_what_is_chat_heading(self):
         assert 'What is Chat?' in build.chat_intro()
 
-    def test_contains_h3_tag(self):
-        assert '<h3>' in build.chat_intro()
+    def test_contains_h2_tag(self):
+        assert '<h2' in build.chat_intro()
 
 
 # ── Wizard Progress Bar ──────────────────────────────────────────────
@@ -1874,13 +1876,11 @@ class TestTabChat:
     def test_contains_features_grid(self):
         assert 'features-grid' in build.tab_chat()
 
-    def test_tips_moved_to_overview(self):
-        assert 'tips-grid' not in build.tab_chat()
-        assert 'tips-grid' in build.tab_overview()
+    def test_tips_in_chat(self):
+        assert 'tips-grid' in build.tab_chat()
 
-    def test_use_cases_moved_to_overview(self):
-        assert 'role-select' not in build.tab_chat()
-        assert 'role-select' in build.tab_overview()
+    def test_use_cases_in_chat(self):
+        assert 'role-select' in build.tab_chat()
 
     def test_contains_all_stages(self):
         result = build.tab_chat()

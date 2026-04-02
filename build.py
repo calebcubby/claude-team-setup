@@ -71,12 +71,14 @@ def styles():
     .section-title {
       font-size: 28px;
       margin-bottom: var(--space-xs);
+      text-align: center;
     }
     .section-subtitle {
       color: var(--text-gray);
       font-size: 16px;
       margin-bottom: var(--space-xl);
       line-height: 1.6;
+      text-align: center;
     }
 
     /* ── Section Nav ────────────────────────────────────── */
@@ -163,8 +165,7 @@ def styles():
       margin-top: var(--space-3xl);
       padding: 0 var(--space-xs);
     }
-    .narrative-intro h3 {
-      font-size: 20px;
+    .narrative-intro h2 {
       color: var(--navy);
       margin-bottom: var(--space-xs);
     }
@@ -180,8 +181,7 @@ def styles():
       border-radius: var(--radius-sm);
       padding: var(--space-2xl);
     }
-    .why-claude-card h3 {
-      font-size: 20px;
+    .why-claude-card h2 {
       color: var(--navy);
       margin-bottom: var(--space-xs);
     }
@@ -210,7 +210,6 @@ def styles():
       z-index: 1;
     }
     .compliance-title {
-      font-size: 20px;
       text-align: center;
       margin-bottom: var(--space-2xs);
     }
@@ -1722,8 +1721,7 @@ def styles():
       margin-top: var(--space-3xl);
       padding: 0 var(--space-xs);
     }
-    .mission-narrative h3 {
-      font-size: 22px;
+    .mission-narrative h2 {
       color: var(--navy);
       margin-bottom: var(--space-md);
     }
@@ -1789,8 +1787,7 @@ def styles():
       margin-top: var(--space-2xl);
       margin-bottom: var(--space-2xl);
     }
-    .chat-intro h3 {
-      font-size: 22px;
+    .chat-intro h2 {
       color: var(--navy);
       margin-bottom: var(--space-sm);
     }
@@ -1881,9 +1878,9 @@ def styles():
     .video-embed .video-play-btn svg { width: 100%; height: 100%; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius-md); }
     /* Onboarding toggle */
-    .onboarding-toggle-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); margin-bottom: var(--space-md); }
+    .onboarding-toggle-header { position: relative; margin-bottom: var(--space-md); }
     .onboarding-toggle-header .section-title { margin-bottom: 0; }
-    .onboarding-toggle-btn { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--teal); background: none; border: 2px solid var(--teal); border-radius: var(--radius-pill); padding: var(--space-xs) var(--space-lg); cursor: pointer; white-space: nowrap; transition: background 0.2s, color 0.2s; }
+    .onboarding-toggle-btn { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--teal); background: none; border: 2px solid var(--teal); border-radius: var(--radius-pill); padding: var(--space-xs) var(--space-lg); cursor: pointer; white-space: nowrap; transition: background 0.2s, color 0.2s; }
     .onboarding-toggle-btn:hover { background: var(--teal); color: var(--white); }
     .onboarding-section { transition: max-height 0.3s var(--ease-out-expo), opacity 0.3s; overflow: hidden; }
     .onboarding-section.collapsed { max-height: 0 !important; opacity: 0; margin: 0; padding: 0; }
@@ -1913,7 +1910,7 @@ def hero():
 def why_anthropic():
     return """
       <div class="why-claude-card">
-        <h3>Why we chose Claude</h3>
+        <h2 class="section-title">Why we chose Claude</h2>
         <p class="why-sub">Anthropic builds AI with safety as the foundation - not an afterthought. That matters when your product handles customer data.</p>
         <ul>
           <li><strong>Enterprise-grade security</strong> - Claude is built for organizations handling sensitive data. Your conversations are private and protected.</li>
@@ -1928,7 +1925,7 @@ def why_anthropic():
 def compliance_callout():
     return """
     <div class="section compliance">
-      <h3 class="compliance-title">Data Privacy - Read This First</h3>
+      <h2 class="section-title compliance-title">Data Privacy - Read This First</h2>
       <p class="compliance-subtitle">Know what's safe to share</p>
       <div class="compliance-grid">
         <div class="compliance-box compliance-allowed">
@@ -1948,7 +1945,7 @@ def compliance_callout():
 def mission_narrative():
     return """
       <div class="mission-narrative">
-        <h3>Your work matters. Claude makes it go further.</h3>
+        <h2 class="section-title">Your work matters. Claude makes it go further.</h2>
         <p>Every role at Acme Corp exists for one reason - building tools that help teams ship faster. Claude gives you leverage to do that better. Write a client proposal in minutes. Research a competitor without digging through dozens of tabs. Draft a board update that's tight on the first pass.</p>
         <p>Claude has three escalating layers. <strong>Chat</strong> handles thinking - drafting, research, analysis. <strong>Cowork</strong> handles doing - persistent projects, file operations, connected tools. <strong>Code</strong> handles building - actual software, pipelines, integrations.</p>
         <div style="background:var(--cream);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);margin-top:var(--space-md);">
@@ -1963,7 +1960,7 @@ def mission_narrative():
 def tool_cards():
     return """
       <div class="section">
-        <h3 class="section-title" style="font-size:22px;">Three Escalating Layers</h3>
+        <h2 class="section-title">Three Escalating Layers</h2>
         <p class="section-subtitle">Thinking, doing, building. Each layer adds capability.</p>
         <div class="tool-cards-grid">
           <div class="tool-card" data-tab-target="chat">
@@ -2040,15 +2037,12 @@ def tab_overview():
     return (
         '<div class="tab-content active" data-tab="overview">'
         + mission_narrative()
-        + '<h3 style="text-align:center;font-size:18px;color:var(--navy);margin-bottom:var(--space-xs);">Meet your thinking partner</h3>'
+        + '<h2 class="section-title">Meet your thinking partner</h2>'
         + video_embed('VHsp6Hp7Stw')
         + why_anthropic()
         + compliance_callout()
         + tool_cards()
         + model_picker()
-        + general_tips()
-        + use_cases()
-        + surprise_me()
         + resources()
         + closing_quote()
         + '</div><!-- tab-overview -->'
@@ -2093,7 +2087,7 @@ def video_embed(video_id, start=0):
 def chat_intro():
     return """
       <div class="chat-intro">
-        <h3>What is Chat?</h3>
+        <h2 class="section-title">What is Chat?</h2>
         <p>Chat handles thinking and drafting. Single-session, text-in/text-out. This is where most of your team lives today.</p>
         <p>You talk to it like a colleague. Ask it to draft an email, brainstorm campaign ideas, analyze data you paste in, or research a topic across the web. It learns your voice and context, so the more you use it, the sharper it gets.</p>
         <p>Set it up in three steps below.</p>
@@ -2674,8 +2668,11 @@ def tab_chat():
         '<div class="tab-content" data-tab="chat">'
         + chat_intro()
         + video_embed('0vZ_UVLhSQQ', start=1)
-        + chat_wizard_section()
         + features_grid()
+        + general_tips()
+        + use_cases()
+        + chat_wizard_section()
+        + surprise_me()
         + '</div><!-- tab-chat -->'
     )
 
@@ -3017,16 +3014,19 @@ def tab_cowork():
     return (
         '<div class="tab-content" data-tab="cowork">'
         + cowork_intro()
+        + '<h2 class="section-title">Cowork: Claude Works on Your Files</h2>'
         + video_embed('UAmKyyZ-b9E')
         + cowork_locked()
         + '<div class="unlocked-state" id="cowork-unlocked" style="display:none;">'
+        + cowork_features_grid()
+        + '<div class="note">Data Privacy: Do not share customer PII, internal financial data, or proprietary information in Cowork prompts or project files without reviewing your data processing agreement.</div>'
+        + cowork_tips()
         + '<div class="onboarding-toggle-header">'
-        + '<h2 class="section-title">Cowork: Claude Works on Your Files</h2>'
-        + '<button class="onboarding-toggle-btn" data-toggle-target="cowork-onboarding" aria-expanded="true">Hide Setup</button>'
+        + '<h2 class="section-title">Get Started</h2>'
+        + '<button class="onboarding-toggle-btn" data-toggle-target="cowork-onboarding" aria-expanded="true">Hide</button>'
         + '</div>'
         + '<div class="onboarding-section" id="cowork-onboarding">'
-        + '<p class="section-subtitle">The desktop app\'s Cowork mode lets Claude read, edit, and create files on your computer. Set up a project folder, then try real tasks below.</p>'
-        + '<div class="note">Data Privacy: Do not share customer PII, internal financial data, or proprietary information in Cowork prompts or project files without reviewing your data processing agreement.</div>'
+        + '<p class="section-subtitle">Set up a project folder, then try real tasks below.</p>'
         + '<div class="folder-tree" style="background:var(--cream);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:var(--space-md) var(--space-lg);font-family:monospace;font-size:13px;line-height:1.8;margin-bottom:var(--space-lg);color:var(--navy);">'
         + '<p style="font-family:var(--font-body);font-size:14px;color:var(--text-light);margin-bottom:var(--space-sm);">Here\'s what your project folder will look like when you\'re done:</p>'
         + '<div><span style="margin-right:6px;">&#128193;</span> <strong>Claude_Company</strong></div>'
@@ -3044,8 +3044,6 @@ def tab_cowork():
         + '<p style="font-size:14px; color:var(--text-light);">Try it on your own projects. Start with small tasks and build from there.</p>'
         + '</div>'
         + '</div><!-- onboarding-section -->'
-        + cowork_features_grid()
-        + cowork_tips()
         + cowork_plugins_table()
         + '</div><!-- cowork-unlocked -->'
         + '</div><!-- tab-cowork -->'
@@ -3388,16 +3386,19 @@ def tab_code():
     return (
         '<div class="tab-content" data-tab="code">'
         + code_intro()
+        + '<h2 class="section-title">Code: Claude as Your Pair Programmer</h2>'
         + video_embed('AJpK3YTTKZ4')
         + code_locked()
         + '<div class="unlocked-state" id="code-unlocked" style="display:none;">'
+        + code_features_grid()
+        + '<div class="note">Data Privacy: Do not share customer PII, internal financial data, or proprietary information in prompts or project files. Claude Code has full read/write/execute access to your machine - only grant it access to directories you intend to work in.</div>'
+        + code_tips()
         + '<div class="onboarding-toggle-header">'
-        + '<h2 class="section-title">Code: Claude as Your Pair Programmer</h2>'
-        + '<button class="onboarding-toggle-btn" data-toggle-target="code-onboarding" aria-expanded="true">Hide Setup</button>'
+        + '<h2 class="section-title">Get Started</h2>'
+        + '<button class="onboarding-toggle-btn" data-toggle-target="code-onboarding" aria-expanded="true">Hide</button>'
         + '</div>'
         + '<div class="onboarding-section" id="code-onboarding">'
-        + '<p class="section-subtitle">Claude Code lives inside the Claude desktop app. It reads, writes, and executes code directly on your machine. Start with the setup card below, then work through the exercises.</p>'
-        + '<div class="note">Data Privacy: Do not share customer PII, internal financial data, or proprietary information in prompts or project files. Claude Code has full read/write/execute access to your machine - only grant it access to directories you intend to work in.</div>'
+        + '<p class="section-subtitle">Start with the setup card below, then work through the exercises.</p>'
         + '<div class="code-cards">'
         + code_card_setup()
         + code_card_3()
@@ -3408,8 +3409,6 @@ def tab_code():
         + '<p style="font-size:14px; color:var(--text-light);">Pick a real project and start building. Plan Mode + specific prompts = best results.</p>'
         + '</div>'
         + '</div><!-- onboarding-section -->'
-        + code_features_grid()
-        + code_tips()
         + code_ways_to_use()
         + '</div><!-- code-unlocked -->'
         + '</div><!-- tab-code -->'
@@ -4241,12 +4240,12 @@ def footer_and_script():
         var hidden = getOnboardingHidden();
         if (hidden[targetId]) {
           section.classList.add('collapsed');
-          btn.textContent = 'Show Setup';
+          btn.textContent = 'Show';
           btn.setAttribute('aria-expanded', 'false');
         }
         btn.addEventListener('click', function() {
           var isCollapsed = section.classList.toggle('collapsed');
-          btn.textContent = isCollapsed ? 'Show Setup' : 'Hide Setup';
+          btn.textContent = isCollapsed ? 'Show' : 'Hide';
           btn.setAttribute('aria-expanded', String(!isCollapsed));
           setOnboardingHidden(targetId, isCollapsed);
         });
@@ -4325,7 +4324,8 @@ def footer_and_script():
       // ── Access Gating ──────────────────────────────────────
       (function() {
         var isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-        var accessPromise = isLocal
+        var forceLocked = new URLSearchParams(location.search).get('locked') === '1';
+        var accessPromise = (isLocal && !forceLocked)
           ? Promise.resolve({ cowork: true, code: true })
           : fetch('/api/claude-setup-access').then(function(res) { return res.json(); });
         accessPromise.then(function(data) {
